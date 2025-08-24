@@ -45,8 +45,8 @@ app.patch("/tasks", async (req, res) => {
   res.send("Good things come to those who wait!");
 });
 
-app.delete("/tasks", async (req, res) => {
-  await prisma.task.delete({});
+app.delete("/tasks/:id", async (req, res) => {
+  await prisma.task.deleteMany({ where: { id: parseInt(req.params?.id) } });
 
   res.send("Good things come to those who wait!");
 });
