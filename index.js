@@ -35,7 +35,7 @@ app.patch("/tasks", async (req, res) => {
 
   await prisma.task.update({
     where: {
-      id: body.id
+      id: parseInt(body.id)
     },
     data: {
       ...updateData
