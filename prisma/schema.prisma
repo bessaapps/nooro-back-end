@@ -10,7 +10,7 @@ datasource db {
 
 model Task {
   id        Int     @id @default(autoincrement())
-  title     String
+  title     String  @db.Text
   color     String?
   completed Boolean @default(false)
 }
